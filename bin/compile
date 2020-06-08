@@ -4,5 +4,5 @@ echo "-----> Found a .slugcleanup"
 
 cd $1
 
-cat .slugcleanup | xargs -I {} bash -c 'rm -rf {}'
+cat .slugcleanup | xargs -I {} bash -c 'echo "  * removing {} "; rm -rf {}'
 rm .slugcleanup
