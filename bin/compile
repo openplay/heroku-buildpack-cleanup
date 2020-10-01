@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+ENV_DIR=$3
+
 slugcleanup="false"
-if [ -d "$env_dir" ]; then
-  slugcleanup=$(cat $env_dir/SLUGCLEANUP)
+if [ -d "$ENV_DIR" ]; then
+  slugcleanup=$(cat $ENV_DIR/SLUGCLEANUP)
 fi
 
 if [ "$slugcleanup" = "true" ]; then
