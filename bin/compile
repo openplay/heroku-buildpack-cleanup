@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-echo "-----> Found a .slugcleanup"
+if [[ $SLUGCLEANUP == "true" ]]; then
+  echo "-----> Found a .slugcleanup"
 
-cd $1
+  cd $1
 
-cat .slugcleanup | xargs -I {} bash -c 'echo "  * removing {} "; rm -rf {}'
-rm .slugcleanup
+  cat .slugcleanup | xargs -I {} bash -c 'echo "  * removing {} "; rm -rf {}'
+  rm .slugcleanup
+else
+  echo "-----> Found a .slugcleanup but ignoring because SLUGCLEANUP != true"
+fi

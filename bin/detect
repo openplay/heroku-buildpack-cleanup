@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # only run cleanup if SLUGCLEANUP env var is "true"
-if [[ -f "$1/.slugcleanup" ]] && [[ $SLUGCLEANUP == "true" ]]; then
+if [ -f "$1/.slugcleanup" ]; then
   echo "Cleanup"
   exit 0
 fi
